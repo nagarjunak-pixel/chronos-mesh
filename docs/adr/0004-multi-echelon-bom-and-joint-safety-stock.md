@@ -21,4 +21,4 @@ In automotive and heavy-machinery manufacturing (e.g., SAP S/4HANA PP/MM multi-p
 ## Consequences
 
 * **Positive**: Eliminates hidden diamond-BOM under-procurement and accurately prices lead-time volatility into inventory buffers and `TTR > TTS` contagion alerts.
-* **Negative**: Assumes statistical independence between daily demand spikes and transit delays; extreme correlated macro shocks are therefore stress-tested separately in the `1,000`-trial Monte Carlo `CVaR95` engine (`src/chronos_mesh/risk/montecarlo.py`).
+* **Negative**: Assumes statistical independence between daily demand spikes and transit delays; extreme correlated macro shocks are therefore stress-tested separately in the `500`-trial Monte Carlo `CVaR95` engine (`src/chronos_mesh/risk/montecarlo.py`).

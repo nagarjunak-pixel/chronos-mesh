@@ -8,7 +8,7 @@
 
 **ChronosMesh** is an enterprise-grade **Neuro-Symbolic Multi-Echelon Supply-Chain Digital Twin and Exact Mixed-Integer Linear Programming (MILP) Rerouting Engine**. It bridges unstructured geopolitical/logistics disruption advisories and mathematically certified multi-corridor procurement allocations across multi-tier manufacturing networks (SAP S/4HANA PP/MM & global industrial OEM topologies).
 
-> **Core Architectural Thesis**: Generative models excel at translating noisy maritime, weather, and customs bulletins into structured shock hypotheses—but **LLMs cannot solve NP-hard fixed-charge network-flow problems without violating flow conservation, supplier capacities, or anti-concentration mandates**. ChronosMesh isolates unstructured parsing behind a typed `ShockConstraintPatch` boundary and solves rerouting via an exact **Two-Phase Tableau Simplex + Best-First Branch-and-Bound MILP engine**, certified by `1,000`-trial **Conditional Value-at-Risk (`CVaR95`)** Monte Carlo simulation.
+> **Core Architectural Thesis**: Generative models excel at translating noisy maritime, weather, and customs bulletins into structured shock hypotheses—but **LLMs cannot solve NP-hard fixed-charge network-flow problems without violating flow conservation, supplier capacities, or anti-concentration mandates**. ChronosMesh isolates unstructured parsing behind a typed `ShockConstraintPatch` boundary and solves rerouting via an exact **Two-Phase Tableau Simplex + Best-First Branch-and-Bound MILP engine**, evaluated with a `500`-trial **Conditional Value-at-Risk (`CVaR95`)** Monte Carlo simulation over a synthetic disruption model.
 
 ---
 

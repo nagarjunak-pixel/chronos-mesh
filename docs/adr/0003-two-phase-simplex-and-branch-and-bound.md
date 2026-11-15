@@ -31,4 +31,4 @@ We implement a self-contained, dependency-free **Exact Two-Phase Tableau Simplex
 ## Consequences
 
 * **Positive**: Zero native C/Fortran binary packaging fragility, `~3–12 ms` solve latency for multi-corridor rerouting, deterministic optimality certificates (`nodes_explored`, `optimality_gap == 0.0`), and full inspectability in code review.
-* **Negative**: Very large enterprise instances ($>10^4$ binary variables) require cutting-plane presolve and commercial/HiGHS backends; our `MilpProblem` schema cleanly isolates the problem matrix from the solver backend for drop-in HiGHS/Gurobi swap at global ERP scale.
+* **Negative**: Very large enterprise instances ($>10^4$ binary variables) require cutting-plane presolve and commercial/HiGHS backends; `solve_milp` takes plain `(c, A_ub, b_ub, A_eq, b_eq)` matrices, so swapping in HiGHS or Gurobi at ERP scale would mean replacing the solver call only, not the planner.
