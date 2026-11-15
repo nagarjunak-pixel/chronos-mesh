@@ -1,0 +1,46 @@
+name: ChronosMesh CI & Mathematical Verification
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  or-and-formal-verification:
+    name: Lint, Strict Mypy, Hypothesis MILP Optimality & CVaR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync --all-extras
+      - run: |
+          uv run ruff check src tests
+          uv run ruff format --check src tests
+      - run: uv run mypy src
+      - run: uv run pytest --cov=chronos_mesh --cov-fail-under=95 --cov-report=term-missing
+      - run: uv run chronos demo
+      - run: uv run chronos pareto --disruption red_sea_and_kaohsiung_compound
+      - run: uv run chronos montecarlo --trials 500
+
+  digital-twin-ui:
+    name: TypeScript & React Digital Twin Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ui
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: ui/package-lock.json
+      - run: |
+          npm ci
+          npm run build
