@@ -1,14 +1,21 @@
 # ChronosMesh — Neuro-Symbolic Supply-Chain Digital Twin & Constrained MILP Optimizer
 
 [![CI & Mathematical Verification](https://github.com/nagarjunak-pixel/chronos-mesh/actions/workflows/ci.yml/badge.svg)](https://github.com/nagarjunak-pixel/chronos-mesh/actions/workflows/ci.yml)
+[![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-1f6feb.svg)](https://github.com/nagarjunak-pixel/chronos-mesh/releases/tag/v1.0.0)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/)
 [![Typed: mypy strict](https://img.shields.io/badge/typing-mypy%20strict-1f6feb.svg)](https://mypy-lang.org/)
 [![Coverage: 98.4%](https://img.shields.io/badge/coverage-98.4%25-brightgreen.svg)](#verification--property-based-optimality-proofs)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-10b981.svg)](LICENSE)
 
 **ChronosMesh** is an enterprise-grade **Neuro-Symbolic Multi-Echelon Supply-Chain Digital Twin and Exact Mixed-Integer Linear Programming (MILP) Rerouting Engine**. It bridges unstructured geopolitical/logistics disruption advisories and mathematically certified multi-corridor procurement allocations across multi-tier manufacturing networks (SAP S/4HANA PP/MM & global industrial OEM topologies).
 
 > **Core Architectural Thesis**: Generative models excel at translating noisy maritime, weather, and customs bulletins into structured shock hypotheses—but **LLMs cannot solve NP-hard fixed-charge network-flow problems without violating flow conservation, supplier capacities, or anti-concentration mandates**. ChronosMesh isolates unstructured parsing behind a typed `ShockConstraintPatch` boundary and solves rerouting via an exact **Two-Phase Tableau Simplex + Best-First Branch-and-Bound MILP engine**, evaluated with a `500`-trial **Conditional Value-at-Risk (`CVaR95`)** Monte Carlo simulation over a synthetic disruption model.
+
+---
+
+## Live ChronosMesh Supply-Chain Digital Twin & MILP Rerouting Workbench
+
+![ChronosMesh Live Workbench — Simchi-Levi Contagion Exposure, Exact Branch-and-Bound MILP Allocation & CVaR95 Tail Risk](docs/assets/workbench-preview.png)
 
 ---
 
