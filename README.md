@@ -7,9 +7,11 @@
 [![Coverage: 98.4%](https://img.shields.io/badge/coverage-98.4%25-brightgreen.svg)](#verification--property-based-optimality-proofs)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-10b981.svg)](LICENSE)
 
-**ChronosMesh** is an enterprise-grade **Neuro-Symbolic Multi-Echelon Supply-Chain Digital Twin and Exact Mixed-Integer Linear Programming (MILP) Rerouting Engine**. It bridges unstructured geopolitical/logistics disruption advisories and mathematically certified multi-corridor procurement allocations across multi-tier manufacturing networks (SAP S/4HANA PP/MM & global industrial OEM topologies).
+**Supply-chain rerouting toy model — pure-Python simplex + branch-and-bound MILP, BOM safety stock, Monte Carlo CVaR95. Educational reference implementation.**
 
-> **Core Architectural Thesis**: Generative models excel at translating noisy maritime, weather, and customs bulletins into structured shock hypotheses—but **LLMs cannot solve NP-hard fixed-charge network-flow problems without violating flow conservation, supplier capacities, or anti-concentration mandates**. ChronosMesh isolates unstructured parsing behind a typed `ShockConstraintPatch` boundary and solves rerouting via an exact **Two-Phase Tableau Simplex + Best-First Branch-and-Bound MILP engine**, evaluated with a `500`-trial **Conditional Value-at-Risk (`CVaR95`)** Monte Carlo simulation over a synthetic disruption model.
+**ChronosMesh** is a small, self-contained Python model of disruption-aware sourcing on a hand-built multi-tier network (a few supplier/plant nodes and lanes). Disruption advisories are mapped by a rule-based (keyword/regex) parser into a typed `ShockConstraintPatch`; a fixed-charge multi-sourcing problem is then solved with a from-scratch **two-phase tableau simplex + best-first branch-and-bound** MILP solver, and the resulting plan is compared to a single-source baseline in a `500`-trial Monte Carlo simulation (VaR95 / CVaR95) over a synthetic disruption model.
+
+> **Design idea**: keep the step that interprets unstructured text separate from the step that enforces hard constraints. Text interpretation only emits a typed patch (capacity multipliers, blocked lanes, tariffs); flow conservation, capacities and the anti-concentration cap are enforced by the exact solver. In this repo the text step is a deterministic rule-based parser, not an LLM.
 
 ---
 
@@ -101,6 +103,16 @@ flowchart LR
 | **95% Value-at-Risk (`VaR95`)** | `$1,131,581.74` | `$212,883.18` | **`-81.2%`** |
 | **95% Expected Shortfall (`CVaR95`)** | `$1,150,872.53` | `$213,810.26` | **`-$937,062.27 (-81.4%)`** |
 | **Demand Fill-Rate Service Level** | `62.70%` | `100.00%` | **`+37.30 pp`** |
+
+---
+
+## Scope & Limitations
+
+- **Scale:** ~1.6k lines of Python in `src/chronos_mesh` (no C++/native code) plus 8 tests; the React UI is a thin demo console over the FastAPI endpoints.
+- **Toy, hand-built data:** the network is a fixed reference topology (5 facility nodes, 7 lanes) with hand-chosen costs, capacities and lead times, and 4 predefined disruption scenarios. All results above are computed on this synthetic instance, not on real ERP or logistics data; there is no SAP or other ERP integration in the code.
+- **Synthetic risk model:** the Monte Carlo benchmark uses hand-picked shock probabilities and distributions and compares against a deliberately fragile 100%-single-source baseline, so the large VaR/CVaR improvements reflect that construction and should not be read as real-world savings estimates. Solve timings come from pure-Python execution on CPU and will vary by machine.
+- **"Neuro-symbolic" is simplified:** advisory parsing is a deterministic keyword/regex rule set; no language model is called anywhere in the pipeline.
+- **Solver limits:** the pure-Python dense-tableau simplex and branch-and-bound are intended for small instances and teaching purposes; they are not a substitute for HiGHS/Gurobi/CPLEX and are not production-hardened.
 
 ---
 

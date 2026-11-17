@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "chronos-mesh"
 version = "1.0.0"
-description = "Neuro-Symbolic Supply-Chain Digital Twin, Multi-Tier Contagion Graph, Branch-and-Bound MILP Optimizer & Monte Carlo CVaR Risk Engine"
+description = "Supply-chain rerouting toy model — pure-Python simplex + branch-and-bound MILP, BOM safety stock, Monte Carlo CVaR95. Educational reference implementation"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"
