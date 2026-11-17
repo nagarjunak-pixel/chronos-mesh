@@ -1,4 +1,4 @@
-name: ChronosMesh CI & Mathematical Verification
+name: ChronosMesh CI
 
 on:
   push:

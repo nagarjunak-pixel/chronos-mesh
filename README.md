@@ -1,6 +1,6 @@
 # ChronosMesh — Neuro-Symbolic Supply-Chain Digital Twin & Constrained MILP Optimizer
 
-[![CI & Mathematical Verification](https://github.com/nagarjunak-pixel/chronos-mesh/actions/workflows/ci.yml/badge.svg)](https://github.com/nagarjunak-pixel/chronos-mesh/actions/workflows/ci.yml)
+[![ChronosMesh CI](https://github.com/nagarjunak-pixel/chronos-mesh/actions/workflows/ci.yml/badge.svg)](https://github.com/nagarjunak-pixel/chronos-mesh/actions/workflows/ci.yml)
 [![Release v1.0.0](https://img.shields.io/badge/release-v1.0.0-1f6feb.svg)](https://github.com/nagarjunak-pixel/chronos-mesh/releases/tag/v1.0.0)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/)
 [![Typed: mypy strict](https://img.shields.io/badge/typing-mypy%20strict-1f6feb.svg)](https://mypy-lang.org/)
@@ -82,11 +82,11 @@ flowchart LR
 | Selected Lane | Mode | Units Shipped | Lead Time | Landed Cost | Scope-3 Carbon |
 | :--- | :--- | ---: | ---: | ---: | ---: |
 | `LANE-TW-CAPE-OCEAN` | Ocean (Cape of Good Hope) | `335.0` | `40.0 d` | `$51,998.00` | `2,043.5 kg` |
-| `LANE-KR-EUR-RAIL` | Trans-Eurasian Rail (`65%` cap active) | `715.0` | `15.0 d` | `$107,745.00` | `8,222.5 kg` |
-| `LANE-DE-TRUCK-EXPRESS` | European Dual-Source Truck | `50.0` | `1.5 d` | `$10,150.00` | `155.0 kg` |
+| `LANE-KR-EURASIA-RAIL` | Trans-Eurasian Rail (`65%` cap active) | `715.0` | `15.0 d` | `$107,745.00` | `8,222.5 kg` |
+| `LANE-DE-TRUCK-DIRECT` | European Dual-Source Truck | `50.0` | `1.5 d` | `$10,150.00` | `155.0 kg` |
 | **Certified Global Optimum** | **13 B&B Nodes (`11.53 ms`)** | **`1,100 / 1,100`** | **`22.00 d` avg** | **`$169,893.00`** | **`10,421.0 kg`** |
 
-### 2. Multi-Objective Pareto Frontier Sweep (`chronos pareto`)
+### 2. Multi-Objective Pareto Front Sweep (`chronos pareto`)
 
 | Executive Regime | Total Landed Cost | Weighted Lead Time | Scope-3 Carbon | MILP Solve Time |
 | :--- | ---: | ---: | ---: | ---: |
@@ -172,13 +172,13 @@ ChronosMesh serves as **Pillar 2 (Neuro-Symbolic Operations Research & Decision 
 
 ## License
 
-Released under the [MIT License](LICENSE).
+Licensed under the [Apache License, Version 2.0](LICENSE).
 
 ---
 
-## Author & Enterprise AI Architecture Hub
+## Author & Links
 Built by **[Nagarjuna Reddy Kamireddy](https://nagarjunak-pixel.github.io/)** (*Nagarjuna Kamireddy / Nagarjuna K*) — Lead AI Architect, GenAI & Agentic AI Lead, and Corporate AI Trainer (20+ years across Enterprise Data, SAP HANA & Production AI; AWS Certified Solutions Architect – Professional & NVIDIA-Certified Professional: Agentic AI).
 
-- **Official Portfolio & Architecture Hub:** [https://nagarjunak-pixel.github.io/](https://nagarjunak-pixel.github.io/)
-- **Enterprise Case Studies & Technical Articles:** [Case Studies](https://nagarjunak-pixel.github.io/case-studies.html) · [Architecture Articles](https://nagarjunak-pixel.github.io/articles.html) · [10-Mandate Role Fit](https://nagarjunak-pixel.github.io/roles.html)
+- **Portfolio:** [https://nagarjunak-pixel.github.io/](https://nagarjunak-pixel.github.io/)
+- **Case Studies & Technical Articles:** [Case Studies](https://nagarjunak-pixel.github.io/case-studies.html) · [Architecture Articles](https://nagarjunak-pixel.github.io/articles.html) · [10-Mandate Role Fit](https://nagarjunak-pixel.github.io/roles.html)
 - **Master CV & AI Search Index:** [Master CV](https://nagarjunak-pixel.github.io/resume.html) · [`llms-full.txt`](https://nagarjunak-pixel.github.io/llms-full.txt) · [LinkedIn](https://www.linkedin.com/in/nagarjuna-kamireddy)
